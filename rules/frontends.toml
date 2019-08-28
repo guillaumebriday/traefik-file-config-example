@@ -1,0 +1,35 @@
+[frontends]
+  [frontends.frontend1]
+    backend = "backend1"
+    passHostHeader = true
+
+    # basicAuth = ["test:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/"] # test:test
+
+    [frontends.frontend1.routes.route1]
+      rule = "Host:backend.localhost"
+
+    [frontends.frontend1.headers]
+      frameDeny = true
+
+      [frontends.frontend1.headers.customResponseHeaders]
+        X-CUSTOM-HEADER = "Leave a star"
+
+    [frontends.frontend1.ratelimit]
+      extractorfunc = "client.ip"
+
+      [frontends.frontend1.ratelimit.rateset.rate]
+        period = "3s"
+        average = 5
+        burst = 10
+
+    [frontends.frontend1.redirect]
+      regex = "^http://backend.localhost/github"
+      replacement = "https://github.com/guillaumebriday/traefik-file-config-example"
+      permanent = true
+
+  [frontends.frontend2]
+    backend = "backend2"
+    passHostHeader = true
+
+    [frontends.frontend2.routes.route1]
+      rule = "Host:frontend.localhost"

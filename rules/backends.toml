@@ -1,0 +1,8 @@
+[backends]
+  [backends.backend1]
+    [backends.backend1.servers.app]
+      url = "http://127.0.0.1:3000"
+
+  [backends.backend2]
+    [backends.backend2.servers.app]
+      url = "http://127.0.0.1:3001"
