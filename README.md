@@ -1,6 +1,8 @@
-# Traefik File Config Example
+# Traefik 1.7 - File Config Example
 
 ![Screenshot](https://raw.githubusercontent.com/guillaumebriday/traefik-file-config-example/master/screenshot.png?token=AB66WTUM5ALM44YMU63U3QS5M4KSC)
+
+[📚 Official Documentation](https://docs.traefik.io/v1.7/configuration/backends/file/)
 
 ## Installation
 
